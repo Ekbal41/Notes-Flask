@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+
+
+{% block title %}Home{% endblock %} {% block content%}
+ 
+
+<div class="container">
+    <br>
+    <br>
+    <br>
+
+    <center>
+    
+    <form class="form-inline row-cols-2"  method="POST">
+       
+        <div class="form-group mx-sm-3 mb-2">
+          <input name="note" id="note" class="form-control" placeholder="Write a note....">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Add Note</button>
+    </form>
+</center>
+<br>
+<br>
+<br>
+   
+ 
+
+   
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for note in user.notes %}
+        <div class="col">
+          <div class="card">
+            <img src="
+
+            https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/816d82cd-e25b-4c66-bfac-61ad146ba65a/den5m5p-136578c3-c871-458e-9299-88900b31c098.jpg/v1/fill/w_1500,h_500,q_75,strp/death_note___light_yagami__kira__twitter_header_by_sosporinho_den5m5p-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTAwIiwicGF0aCI6IlwvZlwvODE2ZDgyY2QtZTI1Yi00YzY2LWJmYWMtNjFhZDE0NmJhNjVhXC9kZW41bTVwLTEzNjU3OGMzLWM4NzEtNDU4ZS05Mjk5LTg4OTAwYjMxYzA5OC5qcGciLCJ3aWR0aCI6Ijw9MTUwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.3h4PdCcHIVZdM5cZEYYZ5I6L06TobmQvZWm69HDsV_I
+            
+            
+            " class="card-img-top"
+              alt="Hollywood Sign on The Hill" />
+            <div class="card-body">
+            
+              {{ note.date }}
+              <p class="card-text">
+                {{ note.data }}
+               
+              </p>
+              <button type="button" class="close btn btn-outline-primary" onClick="deleteNote({{ note.id }})">
+              Delete 
+              </button>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+      
+
+</div>
+
+    {% endblock content%}
